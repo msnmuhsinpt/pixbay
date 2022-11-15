@@ -8,7 +8,6 @@ import 'package:pixabay/util/app_%20constant.dart';
 import 'package:pixabay/view/home/bloc/pixabay_bloc.dart';
 import 'package:pixabay/view/shimmer/home_shimmer.dart';
 import 'package:pixabay/view/widget/app_text_view.dart';
-
 import '../../../util/app_color.dart';
 import '../../widget/no_internet.dart';
 

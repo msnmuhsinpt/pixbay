@@ -44,4 +44,4 @@ app.*.map.json
 /android/app/release
 
  #ignore files api key
- lib/domain/api_key.dart
+ pixabay/lib/domain/api_key.dart
