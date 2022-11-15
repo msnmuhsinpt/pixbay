@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:pixabay/view/home/screen/home_page.dart';
-import 'package:pixabay/view/image_view.dart';
+import 'package:pixabay/view/details_page/image_view.dart';
 import 'package:pixabay/view/splash/splash_page.dart';
 
 Route onGenerateRoute(RouteSettings settings) {

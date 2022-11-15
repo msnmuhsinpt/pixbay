@@ -2,9 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pixabay/util/app_rout.dart';
-import 'package:pixabay/view/home/bloc/pixabay_bloc.dart';
 
-import 'api/api_service/api_service.dart';
+import 'data/api_service/api_service.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
@@ -19,12 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //user as MultiRepositoryProvider
-    return MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider(
-          create: (context) => APIService(),
-        ),
-      ],
+    return RepositoryProvider(
+      create: (context) => APIService(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Pixabay',

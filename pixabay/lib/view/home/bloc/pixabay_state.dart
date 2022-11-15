@@ -15,7 +15,7 @@ class ImageViewLoadingState extends ImageViewState {
 }
 
 class ImageViewLoadedState extends ImageViewState {
-  final PixabayResponse response;
+  final ImageViewResponse response;
 
   const ImageViewLoadedState(this.response);
 

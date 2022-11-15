@@ -12,7 +12,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    intLazi(context);
+    intWord(context);
   }
 
   @override
@@ -24,11 +24,11 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
-  void intLazi(BuildContext context) {
+  void intWord(BuildContext context) {
     Future.delayed(
       const Duration(seconds: 3),
       () =>
-          Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false),
+          Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => true),
     );
   }
 }

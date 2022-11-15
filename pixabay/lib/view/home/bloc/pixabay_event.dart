@@ -5,8 +5,10 @@ abstract class ImageViewEvent extends Equatable {
 }
 
 class ImageViewApiEvent extends ImageViewEvent {
-  const ImageViewApiEvent();
+  final String item;
+
+  const ImageViewApiEvent(this.item);
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [item];
 }
