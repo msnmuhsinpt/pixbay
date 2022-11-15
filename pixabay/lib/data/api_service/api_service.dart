@@ -17,7 +17,7 @@ class APIService {
               },
               body: jsonEncode({}));
 
-      log("API>>>URL>>${AppUrl.baseUrl}<<<RES>>>${response.body}<<<REQ>>>${jsonEncode({
+      log("API>>>URL>>${AppUrl.baseUrl + item + AppUrl.lastSection}<<<RES>>>${response.body}<<<REQ>>>${jsonEncode({
             "tags": item,
           })}");
 

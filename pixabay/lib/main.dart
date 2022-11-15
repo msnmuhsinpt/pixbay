@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:pixabay/util/app_rout.dart';
 
 import 'data/api_service/api_service.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         onGenerateRoute: onGenerateRoute,
+        builder: EasyLoading.init(),
         initialRoute: "/splash",
       ),
     );

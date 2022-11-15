@@ -15,7 +15,11 @@ Route onGenerateRoute(RouteSettings settings) {
       );
       break;
     case "/imageView":
-      page = CupertinoPageRoute(builder: (context) => const ImageView());
+      final arguments = settings.arguments as String;
+      page = CupertinoPageRoute(
+          builder: (context) => ImageView(
+                imageUrl: arguments,
+              ));
       break;
   }
   return page;

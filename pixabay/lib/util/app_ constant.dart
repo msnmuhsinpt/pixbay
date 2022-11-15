@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+//images
+
+String icnNoInternet = "assets/images/ic_noInternet.jpg";
+
+
 //divider
 
 Widget dividerH() {

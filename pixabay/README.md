@@ -14,3 +14,22 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+
+//info
+
+This Application Image Searching app,
+you search any image throw this app
+
+//technical 
+-> This project added Bloc state management system
+-> Added Some Packages
+
+//How To Use
+
+-> create a folder
+-> open cmd/terminal with same path
+-> add git clone https://github.com/msnmuhsinpt/pixbay.git OR download
+-> open any IDE 
+
