@@ -33,9 +33,8 @@ class HomePage extends StatelessWidget {
               create: (context) =>
                   //bloc add
                   ImageViewBloc(RepositoryProvider.of<APIService>(context))
-                    ..add(
-                      const ImageViewApiEvent('Flutter'),
-                    ),
+                  //demo data
+                    ..add(const ImageViewApiEvent('flutter')),
               child: BlocConsumer<ImageViewBloc, ImageViewState>(
                 listener: (context, state) {
                   if (state is ImageViewLoadedState) {
@@ -137,12 +136,6 @@ class HomePage extends StatelessWidget {
                 //api added area
                 ImageViewBloc(RepositoryProvider.of<APIService>(context))
                     .add(ImageViewApiEvent(searchController.text.toString()));
-                /*BlocProvider.of<ImageViewBloc>(context).add(
-                  ImageViewApiEvent(
-                    searchController.text.toString(),
-
-                  ),
-                );*/
               }
             },
             child: appTextView(
