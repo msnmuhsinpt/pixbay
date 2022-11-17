@@ -12,9 +12,7 @@ import '../../../util/app_color.dart';
 import '../../widget/no_internet.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-
-  List<Hits> searchList = [];
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +30,9 @@ class HomePage extends StatelessWidget {
             BlocProvider(
               create: (context) =>
                   //bloc add
-                  ImageViewBloc(RepositoryProvider.of<APIService>(context))
-                  //demo data
-                    ..add(const ImageViewApiEvent('flutter')),
-              child: BlocConsumer<ImageViewBloc, ImageViewState>(
-                listener: (context, state) {
-                  if (state is ImageViewLoadedState) {
-                    if (state.response.hits!.isNotEmpty) {
-                      searchList.addAll(state.response.hits!);
-                    }
-                  }
-                },
+                  ImageViewBloc(RepositoryProvider.of<APIService>(context))..add(const ImageViewApiEvent('Flutter')),
+              //demo data
+              child: BlocBuilder<ImageViewBloc, ImageViewState>(
                 builder: (context, state) {
                   if (state is NoInternetState) {
                     //no internet screen
@@ -60,7 +50,7 @@ class HomePage extends StatelessWidget {
                   if (state is ImageViewLoadedState) {
                     //loaded state
                     if (state.response.hits!.isNotEmpty) {
-                      return imageListUI(context, searchList);
+                      return imageListUI(context, state.response.hits);
                     } else {
                       return Center(
                         child:
@@ -149,7 +139,7 @@ class HomePage extends StatelessWidget {
   //mainUI
   Widget imageListUI(
     BuildContext context,
-    List<Hits> searchList,
+    List<Hits>? hits,
   ) {
     return Padding(
       padding: commonPaddingLR,
@@ -161,10 +151,10 @@ class HomePage extends StatelessWidget {
         crossAxisSpacing: 10,
         childAspectRatio: 1 / 1,
         children: List.generate(
-          searchList.length,
+          hits!.length,
           (index) {
-            String imageUrl = searchList[index].webformatURL.toString();
-            String largeImage = searchList[index].largeImageURL.toString();
+            String imageUrl = hits[index].webformatURL.toString();
+            String largeImage = hits[index].largeImageURL.toString();
             return InkWell(
               child: Container(
                 width: screenWidth(context),
