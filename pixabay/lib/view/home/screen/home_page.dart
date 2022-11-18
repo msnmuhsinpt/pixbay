@@ -25,7 +25,6 @@ class HomePage extends StatelessWidget {
             dividerH(),
             //search area
             searchArea(context),
-
             dividerH(),
             BlocProvider(
               create: (context) =>
